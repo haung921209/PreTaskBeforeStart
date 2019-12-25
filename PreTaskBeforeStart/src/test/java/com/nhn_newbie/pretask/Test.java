@@ -1,3 +1,4 @@
+package com.nhn_newbie.pretask;
 
 import java.sql.Connection;
 
