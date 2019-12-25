@@ -15,4 +15,9 @@
 	                 		  , #{writer}  )
    
    </insert>
+<<<<<<< HEAD
+=======
+   
+   
+>>>>>>> refs/remotes/origin/master
 </mapper>
