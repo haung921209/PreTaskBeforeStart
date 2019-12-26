@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.co.dao.BoardDAO;
 import kr.co.vo.BoardVO;
+import java.util.List;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -20,4 +21,11 @@ public class BoardServiceImpl implements BoardService {
 		dao.write(boardVO);
 	}
 
+
+	// 게시물 목록 조회
+	@Override
+	public List<BoardVO> list() throws Exception {
+
+		return dao.list();
+	}
 }

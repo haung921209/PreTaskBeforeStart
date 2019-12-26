@@ -13,7 +13,6 @@
 	<!-- 오라클 접속 -->
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
         <property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
-<<<<<<< HEAD
         <property name="url" value="jdbc:log4jdbc:oracle:thin:@localhost:1521/xe"/>
         <property name="username" value="system"/>
         <property name="password" value="oracle"/>
@@ -28,23 +27,10 @@
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
     </bean>
-=======
-        <property name="url" value="jdbc:log4jdbc:oracle:thin:@localhost:49161/xe"/>
-        <property name="username" value="system"/>
-        <property name="password" value="oracle"/>
-    </bean>
-   
-    <!-- Mybatis 연동 -->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-         <property name="dataSource" ref="dataSource"></property>
-         <property name="configLocation" value="classpath:/mybatis-config.xml"></property>
-         <property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"/>
-    </bean>
     
-     <!-- scan -->
+    <!-- scan -->
     <context:component-scan base-package="kr.co.service"></context:component-scan>
     <context:component-scan base-package="kr.co.dao"></context:component-scan>
     <context:component-scan base-package="kr.co.vo"></context:component-scan>
-    
->>>>>>> refs/remotes/origin/master
+
 </beans>
