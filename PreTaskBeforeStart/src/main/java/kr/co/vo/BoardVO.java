@@ -8,6 +8,7 @@ public class BoardVO {
 	private String content;
 	private String writer;
 	private Date regdate;
+	private Date moddate;
 	public int getBno() {
 		return bno;
 	}
@@ -38,7 +39,12 @@ public class BoardVO {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	
+	public Date getModdate() {
+		return moddate;
+	}
+	public void setModdate(Date moddate) {
+		this.moddate=moddate;
+	}
 	
 	
 }

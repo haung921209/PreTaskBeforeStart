@@ -38,7 +38,8 @@
 	    <update id="update" parameterType="kr.co.vo.BoardVO">
 		UPDATE MP_BOARD
 		   SET TITLE    =   #{title},
-		   	   CONTENT  =   #{content}
+		   	   CONTENT  =   #{content},
+		   	   MODDATE = CURRENT_TIMESTAMP
 		 WHERE BNO = #{bno} 
 	</update>
 	

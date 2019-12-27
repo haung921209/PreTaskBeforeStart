@@ -75,7 +75,13 @@
 						<tr>
 							<td>
 								<label for="regdate">작성날짜</label>
-								<fmt:formatDate value="${read.regdate}" pattern="yyyy-MM-dd" />					
+								<fmt:formatDate value="${read.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />					
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="moddate">수정날짜</label>
+								<fmt:formatDate value="${read.moddate}" pattern="yyyy-MM-dd HH:mm:ss" />					
 							</td>
 						</tr>		
 					</tbody>			
