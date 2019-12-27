@@ -61,7 +61,7 @@
 							</tr>	
 							<tr>
 								<td>
-									<label for="content">내용</label><textarea id="content" name="content"><c:out value="${update.content}" class="chk" title="내용을 입력하세요."/></textarea>
+									<label for="content">내용</label><textarea id="content" name="content" class="chk" title="내용을 입력하세요."><c:out value="${update.content}" /></textarea>
 								</td>
 							</tr>
 							<tr>
