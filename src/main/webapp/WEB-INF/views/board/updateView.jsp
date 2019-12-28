@@ -19,6 +19,11 @@
 				if(fn_valiChk()){
 					return false;
 				}
+				alert("update.writer");
+				if(!emailcheck()){
+					return false;
+				}
+				emailcheck();
 				formObj.attr("action", "/board/update");
 				formObj.attr("method", "post");
 				formObj.submit();
@@ -34,6 +39,21 @@
 				}
 			}
 		}
+		function emailcheck() {
+			var updateForm=$("form[name='updateForm'].emailchk").length;
+			alert(updateForm);
+		    var at="@";
+		    var dot=".";
+		    var lat=str.indexOf(at);
+		    var lstr=str.length;
+		    var ldot=str.indexOf(dot);
+		    if (str.indexOf(at)==-1){
+		        alert("Invalid E-mail ID");
+		   		return false;
+			}
+		    else
+				return true;
+			}
 		
 	</script>
 	<body>
@@ -61,7 +81,7 @@
 							</tr>	
 							<tr>
 								<td>
-									<label for="content">내용</label><textarea id="content" name="content" class="chk" title="내용을 입력하세요."><c:out value="${update.content}" /></textarea>
+									<label for="content">내용</label><textarea id="content" name="content" class="emailchk" title="내용을 입력하세요."><c:out value="${update.content}" /></textarea>
 								</td>
 							</tr>
 							<tr>

@@ -26,6 +26,20 @@
 				}
 			}
 		}
+		function emailcheck(str) {
+
+		    var at="@"
+		    var dot="."
+		    var lat=str.indexOf(at)
+		    var lstr=str.length
+		    var ldot=str.indexOf(dot)
+		    if (str.indexOf(at)==-1){
+		        alert("Invalid E-mail ID")
+
+		    return false
+		}eles
+		 return true
+		}
 	</script>
 	
 	<body>
@@ -52,7 +66,7 @@
 							</tr>	
 							<tr>
 								<td>
-									<label for="content">내용</label><textarea id="content" name="content" class="chk" title="내을 입력하세요." ></textarea>
+									<label for="content">내용</label><textarea id="content" name="content" class="chk" title="내용을 입력하세요." ></textarea>
 								</td>
 							</tr>
 							<tr>
