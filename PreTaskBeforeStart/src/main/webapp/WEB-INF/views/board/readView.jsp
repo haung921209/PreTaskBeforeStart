@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	 	<title>게시판</title>
+	 	<title>방명록</title>
 	</head>
 	
 	<script type="text/javascript">
@@ -42,7 +42,7 @@
 	
 		<div id="root">
 			<header>
-				<h1> 게시판</h1>
+				<h1> 방명록</h1>
 			</header>
 			<hr />
 			 

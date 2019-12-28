@@ -3,12 +3,12 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 	<head>
-	 	<title>게시판</title>
+	 	<title>방명록</title>
 	</head>
 	<body>
 		<div id="root">
 			<header>
-				<h1> 게시판</h1>
+				<h1> 방명록 </h1>
 			</header>
 			<hr />
 			 

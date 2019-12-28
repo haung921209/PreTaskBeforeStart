@@ -9,6 +9,7 @@
 		SELECT   BNO
 			   , TITLE
 			   , WRITER
+			   , CONTENT
 			   , REGDATE
 		  FROM MP_BOARD
 		  ORDER BY BNO DESC
@@ -32,6 +33,7 @@
 			  , CONTENT
 			  , WRITER
 			  , REGDATE
+			  , MODDATE
 		 FROM MP_BOARD
 		 WHERE BNO = #{bno}
 	</select>
