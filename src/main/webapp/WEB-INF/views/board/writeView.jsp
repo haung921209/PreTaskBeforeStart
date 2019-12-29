@@ -17,10 +17,6 @@
 				if(!validateEmail(writer)){
 					//이메일 체크 안되었을 때 
 					alert("이메일을 입력해주세요 ");
-				}else if(){
-					//제목 입력 안되었을 때
-				}else if(){
-					//내용 입력 안되었을 때 
 				}
 				else{
 					$("#writeContainer").submit();
@@ -68,6 +64,12 @@
 								<td>
 									<label for="writer">작성자</label><input type="text" id="writer" name="writer" class="chk" title="작성자를 입력하세요." />
 								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="pwd">암호 </label><input type="text" id="pwd" name="pwd" class="chk" title="암호를 입력하세요." />
+								</td>
+							</tr>
 							<tr>
 								<td>						
 									<button type="button" class="write_btn">작성</button>

@@ -7,8 +7,10 @@ public class BoardVO {
 	private String title;
 	private String content;
 	private String writer;
+	private String pwd;
 	private Date regdate;
 	private Date moddate;
+	
 	public int getBno() {
 		return bno;
 	}
@@ -32,6 +34,12 @@ public class BoardVO {
 	}
 	public void setWriter(String writer) {
 		this.writer = writer;
+	}
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
 	public Date getRegdate() {
 		return regdate;

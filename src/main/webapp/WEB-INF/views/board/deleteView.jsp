@@ -10,14 +10,23 @@
 	</head>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			
+			
 			var formObj = $("form[name='deleteForm']");
 			$(".delete_btn").on("click",function(){
 				var deleteYN=confirm("정말 삭제하시겠습니까?");
+				var value=$('#pwd').val();
+				
 				if(deleteYN==true){
 					
-					formObj.attr("action","/board/delete");
-					formObj.attr("method","post");
-					formObj.submit();
+					if("${read.pwd}"==value){
+						formObj.attr("action","/board/delete");
+						formObj.attr("method","post");
+						formObj.submit();
+					}
+					else{
+						alert("암호를 확인해주세요");
+					}
 				}
 				
 				
@@ -54,8 +63,19 @@
 				</form>
 				<div>
 				
-					<button type="button" class="delete_btn">삭제</button>
-					<button type="button" class="cancel_btn">취소</button>
+					<tr>
+						<td>
+							<label for="pwd">암호 </label><input type="text" id="pwd" name="pwd" class="chk" title="암호를 입력하세요." />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button type="button" class="delete_btn">삭제</button>
+							<button type="button" class="cancel_btn">취소</button>
+						</td>
+					</tr>
+					
+					
 				</div>
 			</section>
 		

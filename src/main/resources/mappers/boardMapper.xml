@@ -19,11 +19,13 @@
 	   INSERT INTO MP_BOARD(    BNO 
 	   					      , TITLE 
 	   					      , CONTENT 
-	   					      , WRITER  )
+	   					      , WRITER  
+	   					      , PWD)
 	                 VALUES(    MP_BOARD_SEQ.NEXTVAL 
 	                 		  , #{title}
 	                 		  , #{content}
-	                 		  , #{writer}  )
+	                 		  , #{writer}  
+	                 		  , #{pwd})
    
    </insert>
    
@@ -34,6 +36,7 @@
 			  , WRITER
 			  , REGDATE
 			  , MODDATE
+			  , PWD
 		 FROM MP_BOARD
 		 WHERE BNO = #{bno}
 	</select>
