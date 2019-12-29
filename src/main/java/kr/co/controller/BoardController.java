@@ -1,7 +1,8 @@
 package kr.co.controller;
 
 import javax.inject.Inject;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.co.service.BoardService;
 import kr.co.vo.BoardVO;
+
+
+
+
 
 @Controller
 @RequestMapping("/board/*")
@@ -33,9 +38,16 @@ public class BoardController {
 	public String write(BoardVO boardVO) throws Exception{
 		logger.info("write");
 		
-		service.write(boardVO);
-		
-		return "redirect:/board/list";
+		String regexForEmail = "^[_a-zA-Z0-9-\\.]+@[\\.a-zA-Z0-9-]+\\.[a-zA-Z]+$";
+		boolean emailValid=boardVO.getWriter().matches(regexForEmail);
+		if(emailValid) {
+			service.write(boardVO);
+			return "redirect:/board/list";
+		}
+		else {
+			
+			return "board/writeView";
+		}
 	}
 
 	// 게시판 목록 조회
