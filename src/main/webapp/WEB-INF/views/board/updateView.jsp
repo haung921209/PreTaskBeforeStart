@@ -16,8 +16,22 @@
 			})
 			
 			$(".update_btn").on("click", function(){
+				var updateYN=confirm("정말 수정하시겠습니까?");
+				var value=$('#pwd').val();
 				
-				$("#updateContainer").submit();			
+				if(updateYN==true){
+					if("${update.pwd}"==value){
+						$("#updateContainer").submit();	
+					}
+					else{
+						alert("암호를 확인해주세요!");
+					}
+					
+				}
+				
+				
+				
+						
 			
 			})
 		})
@@ -57,6 +71,11 @@
 							<tr>
 								<td>
 									<label for="writer">작성자</label><input type="text" id="writer" name="writer" value="${update.writer}" readonly="readonly"/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="pwd">암호 </label><input type="text" id="pwd" name="pwd" class="chk" title="암호를 입력하세요." />
 								</td>
 							</tr>
 							<tr>
