@@ -78,6 +78,14 @@ public class BoardController {
 			
 			return "redirect:/board/list";
 		}
+		
+		@RequestMapping(value="/deleteView", method = RequestMethod.GET)
+		public String deleteView(BoardVO boardVO,Model model) throws Exception{
+			logger.info("deleteView");
+			
+			model.addAttribute("read", service.read(boardVO.getBno()));
+			return "board/deleteView";
+		}
 
 		// 게시판 삭제
 		@RequestMapping(value = "/delete", method = RequestMethod.POST)

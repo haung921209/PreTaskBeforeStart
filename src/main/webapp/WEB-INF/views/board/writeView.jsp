@@ -6,19 +6,34 @@
 	 	<title>방명록</title>
 	</head>
 	<script type="text/javascript">
-	$(document).ready(function(){
+		$(document).ready(function(){
+					
+			$(".cancel_btn").on("click", function(){
+				event.preventDefault();
+				location.href = "/board/list";
+			})
+			$(".write_btn").on("click",function(){
+				var writer=$("#writer").val();
+				if(!validateEmail(writer)){
+					//이메일 체크 안되었을 때 
+					alert("이메일을 입력해주세요 ");
+				}else if(){
+					//제목 입력 안되었을 때
+				}else if(){
+					//내용 입력 안되었을 때 
+				}
+				else{
+					$("#writeContainer").submit();
+				}
 				
-		$(".cancel_btn").on("click", function(){
-			event.preventDefault();
-			location.href = "/board/list";
-		})
-		$(".write_btn").on("click",function(){
+				
+			})
 			
-			$("#writeContainer").submit();
 		})
-		
-	})
-		
+		function validateEmail(email) {
+			var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+			return re.test(email);
+		}
 		
 	</script>
 	

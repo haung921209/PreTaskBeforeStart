@@ -37,7 +37,7 @@
 		 FROM MP_BOARD
 		 WHERE BNO = #{bno}
 	</select>
-	<update id="update" parameterType="kr.co.vo.BoardVO">
+	 <update id="update" parameterType="kr.co.vo.BoardVO">
 		UPDATE MP_BOARD
 		   SET TITLE    =   #{title},
 		   	   CONTENT  =   #{content},
