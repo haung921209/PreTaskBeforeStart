@@ -6,31 +6,23 @@
 	 	<title>방명록</title>
 	</head>
 	<script type="text/javascript">
-		$(document).ready(function(){
-			var formObj = $("form[name='writeForm']");
-			$(".write_btn").on("click", function(){
-				if(fn_valiChk()){
-					return false;
-				}
-				formObj.attr("action", "/board/write");
-				formObj.attr("method", "post");
-				formObj.submit();
-			});
+	$(document).ready(function(){
+				
+		$(".cancel_btn").on("click", function(){
+			event.preventDefault();
+			location.href = "/board/list";
 		})
-		function fn_valiChk(){
-			var regForm = $("form[name='writeForm'] .chk").length;
-			for(var i = 0; i<regForm; i++){
-				if($(".chk").eq(i).val() == "" || $(".chk").eq(i).val() == null){
-					alert($(".chk").eq(i).attr("title"));
-					return true;
-				}
-			}
-		}
+		$(".write_btn").on("click",function(){
+			
+			$("#writeContainer").submit();
+		})
+		
+	})
 		
 		
 	</script>
 	
-	<body>
+	<body> 
 	
 		<div id="root">
 			<header>
@@ -44,7 +36,7 @@
 			<hr />
 			
 			<section id="container">
-				<form role="form" method="post" action="/board/write">
+				<form name="writeForm" id="writeContainer" role="form" method="post" action="/board/write">
 					<table>
 						<tbody>
 							<tr>
@@ -63,9 +55,11 @@
 								</td>
 							<tr>
 								<td>						
-									<button type="submit">작성</button>
+									<button type="button" class="write_btn">작성</button>
+									<button type="button" class="cancel_btn">취소</button>
 								</td>
-							</tr>			
+							</tr>
+										
 						</tbody>			
 					</table>
 				</form>

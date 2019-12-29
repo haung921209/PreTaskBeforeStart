@@ -87,9 +87,9 @@
 					</tbody>			
 				</table>
 				<div>
-					<button type="submit" class="update_btn">수정</button>
-					<button type="submit" class="delete_btn">삭제</button>
-					<button type="submit" class="list_btn">목록</button>	
+					<button type="button" class="update_btn">수정</button>
+					<button type="button" class="delete_btn">삭제</button>
+					<button type="button" class="list_btn">목록</button>	
 				</div>
 			</section>
 			<hr />

@@ -8,7 +8,7 @@
 	</head>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			var formObj = $("form[name='updateForm']");
+			
 			
 			$(".cancel_btn").on("click", function(){
 				event.preventDefault();
@@ -16,44 +16,14 @@
 			})
 			
 			$(".update_btn").on("click", function(){
-				if(fn_valiChk()){
-					return false;
-				}
-				alert("update.writer");
-				if(!emailcheck()){
-					return false;
-				}
-				emailcheck();
-				formObj.attr("action", "/board/update");
-				formObj.attr("method", "post");
-				formObj.submit();
+				
+				$("#updateContainer").submit();			
+			
 			})
 		})
 			
-		function fn_valiChk(){
-			var updateForm = $("form[name='updateForm'] .chk").length;
-			for(var i = 0; i<updateForm; i++){
-				if($(".chk").eq(i).val() == "" || $(".chk").eq(i).val() == null){
-					alert($(".chk").eq(i).attr("title"));
-					return true;
-				}
-			}
-		}
-		function emailcheck() {
-			var updateForm=$("form[name='updateForm'].emailchk").length;
-			alert(updateForm);
-		    var at="@";
-		    var dot=".";
-		    var lat=str.indexOf(at);
-		    var lstr=str.length;
-		    var ldot=str.indexOf(dot);
-		    if (str.indexOf(at)==-1){
-		        alert("Invalid E-mail ID");
-		   		return false;
-			}
-		    else
-				return true;
-			}
+		
+	
 		
 	</script>
 	<body>
@@ -68,9 +38,9 @@
 				<%@include file="nav.jsp" %>
 			</div>
 			<hr />
-			
+			       
 			<section id="container">
-				<form name="updateForm" role="form" method="post" action="/board/update">
+				<form name="updateForm" id="updateContainer" role="form" method="post" action="/board/update">
 					<input type="hidden" name="bno" value="${update.bno}" readonly="readonly"/>
 					<table>
 						<tbody>
@@ -98,8 +68,8 @@
 						</tbody>			
 					</table>
 					<div>
-						<button type="submit" class="update_btn">저장</button>
-						<button type="submit" class="cancel_btn">취소</button>
+						<button type="button" class="update_btn">저장</button>
+						<button type="button" class="cancel_btn">취소</button>
 					</div>
 				</form>
 			</section>
